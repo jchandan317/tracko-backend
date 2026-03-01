@@ -1,6 +1,16 @@
 spring:
+  cache:
+    type: simple
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
   jpa:
     show-sql: true
+
+management:
+  health:
+    redis:
+      enabled: false
 
 logging:
   level:
