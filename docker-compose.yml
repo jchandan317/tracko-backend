@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tracko-postgres
+    environment:
+      POSTGRES_DB: tracko_db
+      POSTGRES_USER: tracko
+      POSTGRES_PASSWORD: tracko
+    ports:
+      - "5432:5432"
+    volumes:
+      - tracko_pg_data:/var/lib/postgresql/data
+
+volumes:
+  tracko_pg_data:
